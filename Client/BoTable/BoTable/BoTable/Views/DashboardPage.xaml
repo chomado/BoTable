@@ -10,5 +10,7 @@
 
 	<!-- タブで表示できるページ群 -->
 	<views:WaitingPage Title="待ち画面"></views:WaitingPage>
+	<views:FloorMapPage Title="フロアマップ"></views:FloorMapPage>
+	<views:MenuPage Title="メニュー"></views:MenuPage>
 
 </TabbedPage>
