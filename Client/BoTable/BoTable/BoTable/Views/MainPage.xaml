@@ -8,7 +8,8 @@
 	<!-- iOS のとき、上に 20px 余白 -->
 	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
 
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+  <StackLayout>
+    <Label Text="ぽぽぽ食堂へようこそ！" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+	<Button Text="QRコードを読み込む" Margin="30" />
   </StackLayout>
 </ContentPage>
