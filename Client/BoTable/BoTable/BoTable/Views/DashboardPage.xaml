@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	xmlns:views="clr-namespace:BoTable.Views"
 	x:Class="BoTable.Views.DashboardPage"
 	Title="DashboardPage">
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
 	</ContentPage.Padding> 
-	<TabbedPage.ItemTemplate>
-		<DataTemplate>
-			<ContentPage Title="{Binding Title}">
-				<BoxView Color="{Binding Color}" /> 
-			</ContentPage>
-		</DataTemplate> 
-	</TabbedPage.ItemTemplate>
+
+	<!-- タブで表示できるページ群 -->
+	<views:WaitingPage Title="待ち画面"></views:WaitingPage>
+
 </TabbedPage>

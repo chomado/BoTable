@@ -40,6 +40,9 @@
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\DashboardPageViewModel.cs" />
+    <Compile Include="Views\WaitingPage.xaml.cs">
+      <DependentUpon>WaitingPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -50,6 +53,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\DashboardPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WaitingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
