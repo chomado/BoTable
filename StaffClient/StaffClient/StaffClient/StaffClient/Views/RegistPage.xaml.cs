@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using StaffClient.ViewModels;
+using System;
+using Xamarin.Forms;
 
 namespace StaffClient.Views
 {
@@ -7,6 +9,11 @@ namespace StaffClient.Views
         public RegistPage()
         {
             InitializeComponent();
+        }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            ((RegistPageViewModel)this.BindingContext).LoadCommand.Execute();
         }
     }
 }

@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="StaffClient.Views.RegistPage">
-  
+             x:Class="StaffClient.Views.RegistPage"
+             Appearing="ContentPage_Appearing"
+             Title="Waiting list">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0" />
+    </ContentPage.Padding>
+    <StackLayout>
+        <ListView ItemsSource="{Binding WaitingList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Id, StringFormat='お客様番号 {0} 番'}" 
+                              Detail="{Binding Capacity, StringFormat='{0} 名様'}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
