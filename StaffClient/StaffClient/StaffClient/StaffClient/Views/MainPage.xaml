@@ -6,6 +6,11 @@
              x:Class="StaffClient.Views.MainPage"
              Title="MainPage">
   <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-  </StackLayout>
+        <Button Text="Regist"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="RegistPage" />
+        <Button Text="Leave"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="LeavePage" />
+    </StackLayout>
 </ContentPage>
