@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace BoTable.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class WaitingPage : ContentPage
     {
-        public MainPage()
+        public WaitingPage()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace BoTable.Views
         {
             var mainPageViewModel = (MainPageViewModel)this.BindingContext;
 
-            // ダッシュボードページへの遷移のコマンド実行
+            // 詳細ページへの遷移のコマンド実行
             mainPageViewModel.NavigateToDetailCommand.Execute();
         }
     }

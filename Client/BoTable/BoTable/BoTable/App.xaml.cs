@@ -1,5 +1,8 @@
 ﻿using Prism.Unity;
 using BoTable.Views;
+using Microsoft.Azure.Documents.Client;
+using Microsoft.Practices.Unity;
+using BoTable.Services;
 
 namespace BoTable
 {
@@ -16,7 +19,15 @@ namespace BoTable
 
         protected override void RegisterTypes()
         {
-            Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<DashboardPage>();
+
+            Container.RegisterType<Registration>(new ContainerControlledLifetimeManager());
+
+            // Document クライアントをコンテナに登録
+            Container.RegisterInstance(new DocumentClient(
+                serviceEndpoint: new System.Uri("https://botable.documents.azure.com:443/"),
+                authKeyOrResourceToken: "Qp2YxwT8uNCTrhuKR3pUCnLkgbEkQWu1CcD0TQzAq67VCeqIKBWiyHRSwyNbQaejcYioptYY0JSraNNK1pByvQ=="));
         }
     }
 }
