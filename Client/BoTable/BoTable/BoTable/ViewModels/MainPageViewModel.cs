@@ -16,10 +16,15 @@ namespace BoTable.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainPageViewModel()
+		public MainPageViewModel(INavigationService navigationService)
         {
-
+            // 詳細ページへと遷移する時のコマンドを定義
+            this.NavigateToDetailCommand = new DelegateCommand(
+                executeMethod: async () => await navigationService.NavigateAsync(name: "DashboardPage")
+            );
         }
+
+        // ライフサイクル
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
@@ -31,5 +36,10 @@ namespace BoTable.ViewModels
             if (parameters.ContainsKey("title"))
                 Title = (string)parameters["title"] + " and Prism";
         }
+
+        // コマンド
+
+        // 詳細ページへと遷移したい時に呼ばれるコマンド
+        public DelegateCommand NavigateToDetailCommand { get; }
     }
 }

@@ -10,6 +10,6 @@
 
   <StackLayout>
     <Label Text="ぽぽぽ食堂へようこそ！" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
-	<Button Text="QRコードを読み込む" Margin="30" />
+	<Button Text="QRコードを読み込む" Margin="30" Clicked="OnQrClicked" />
   </StackLayout>
 </ContentPage>

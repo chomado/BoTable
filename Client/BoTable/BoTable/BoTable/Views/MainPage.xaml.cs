@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using BoTable.ViewModels;
+using Xamarin.Forms;
 
 namespace BoTable.Views
 {
@@ -7,6 +9,14 @@ namespace BoTable.Views
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public void OnQrClicked(object sender, EventArgs e)
+        {
+            var mainPageViewModel = (MainPageViewModel)this.BindingContext;
+
+            // 詳細ページへの遷移のコマンド実行
+            mainPageViewModel.NavigateToDetailCommand.Execute();
         }
     }
 }
