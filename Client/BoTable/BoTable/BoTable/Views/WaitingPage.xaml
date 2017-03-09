@@ -9,6 +9,6 @@
 	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
 
   <StackLayout>
-    <Label Text="あと５０分" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+    <Label Text=" {Binding Number, StringFormat='現在{0}組が待っています'}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
   </StackLayout>
 </ContentPage>
