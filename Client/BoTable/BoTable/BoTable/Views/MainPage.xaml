@@ -4,12 +4,13 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="BoTable.Views.MainPage"
-             Title="MainPage">
+             Title="Welcome to BoTable Restaurant">
 	<!-- iOS のとき、上に 20px 余白 -->
 	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
 
   <StackLayout>
-    <Label Text="ぽぽぽ食堂へようこそ！" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
-	<Button Text="QRコードを読み込む" Margin="30" Clicked="OnQrClicked" />
+	<Image Source="Welcome.png" />
+	<Image Source="restaurant.jpg" />
+	<Button Text="Scan QR code" Margin="30" Clicked="OnQrClicked" />
   </StackLayout>
 </ContentPage>

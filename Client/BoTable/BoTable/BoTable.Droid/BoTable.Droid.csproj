@@ -147,6 +147,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\restaurant.jpg" />
+    <AndroidResource Include="Resources\drawable\restaurant2.jpg" />
+    <AndroidResource Include="Resources\drawable\Icon-Portrait.png" />
+    <AndroidResource Include="Resources\drawable\Welcome.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\tabs.xml" />

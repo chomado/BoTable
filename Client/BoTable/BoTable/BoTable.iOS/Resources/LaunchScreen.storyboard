@@ -40,6 +40,9 @@
         <image name="Icon-Small-40.png" width="40" height="40"/>
         <image name="Icon-Small.png" width="29" height="29"/>
         <image name="Icon-Portrait.png" width="768" height="1004"/>
+        <image name="restaurant.jpg" width="640" height="426"/>
+        <image name="restaurant2.jpg" width="2400" height="1600"/>
+        <image name="Welcome.png" width="762" height="358"/>
     </resources>
     <color key="tintColor" colorSpace="calibratedRGB" red="0.46274509803921571" green="0" blue="0.050980392156862744" alpha="1"/>
 </document>
