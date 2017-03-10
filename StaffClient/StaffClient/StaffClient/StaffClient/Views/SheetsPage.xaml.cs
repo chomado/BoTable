@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace StaffClient.Views
 {
-    public partial class LeavePage : ContentPage
+    public partial class SheetsPage : ContentPage
     {
-        public LeavePage()
+        public SheetsPage()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace StaffClient.Views
         {
             if (e.SelectedItem == null) { return; }
 
-            ((LeavePageViewModel)this.BindingContext).LeaveCommand.Execute((Sheet)e.SelectedItem);
+            ((SheetsPageViewModel)this.BindingContext).RegistCommand.Execute((Sheet)e.SelectedItem);
             ((ListView)sender).SelectedItem = null;
         }
     }

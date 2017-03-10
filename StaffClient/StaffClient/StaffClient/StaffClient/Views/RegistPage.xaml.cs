@@ -1,5 +1,7 @@
-﻿using StaffClient.ViewModels;
+﻿using StaffClient.BusinessObjects;
+using StaffClient.ViewModels;
 using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace StaffClient.Views
@@ -11,9 +13,19 @@ namespace StaffClient.Views
             InitializeComponent();
         }
 
-        private void ContentPage_Appearing(object sender, EventArgs e)
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            ((RegistPageViewModel)this.BindingContext).LoadCommand.Execute();
+            try
+            {
+                if (e.SelectedItem == null) { return; }
+                var party = (Party)e.SelectedItem;
+                ((RegistPageViewModel)this.BindingContext).SelectPartyCommand.Execute(party);
+                ((ListView)sender).SelectedItem = null;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
     }
 }

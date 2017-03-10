@@ -36,6 +36,7 @@ namespace StaffClient
             this.Container.RegisterTypeForNavigation<MainPage>();
             this.Container.RegisterTypeForNavigation<RegistPage>();
             this.Container.RegisterTypeForNavigation<LeavePage>();
+            Container.RegisterTypeForNavigation<SheetsPage>();
         }
     }
 }

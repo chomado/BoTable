@@ -37,16 +37,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Party.cs" />
+    <Compile Include="BusinessObjects\Sheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\StaffService.cs" />
     <Compile Include="ViewModels\LeavePageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\RegistPageViewModel.cs" />
+    <Compile Include="ViewModels\SheetsPageViewModel.cs" />
     <Compile Include="Views\LeavePage.xaml.cs">
       <DependentUpon>LeavePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegistPage.xaml.cs">
       <DependentUpon>RegistPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SheetsPage.xaml.cs">
+      <DependentUpon>SheetsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\LeavePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SheetsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -4,14 +4,14 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="StaffClient.Views.RegistPage"
-             Appearing="ContentPage_Appearing"
              Title="Waiting list">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
                     iOS="0,20,0,0" />
     </ContentPage.Padding>
     <StackLayout>
-        <ListView ItemsSource="{Binding WaitingList}">
+        <ListView ItemsSource="{Binding WaitingList}"
+                  ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Id, StringFormat='お客様番号 {0} 番'}" 
