@@ -36,9 +36,11 @@ namespace BoTable.Model
             set { this.SetProperty(ref this.waitingMinutes, value); this.OnPropertyChanged(nameof(WaitingMinutesMessage)); }
         }
 
-        public string PartyCountMessage => this.PartyCount == -1 ? "お客様は登録されていません" : $"あなたは {this.PartyCount} 組目です";
+		public string PartyCountMessage => this.PartyCount == -1 ? "お客様は登録されていません" : $"あなたは {this.PartyCount} 組目です";
+        public string PartyCountMessageEn => this.PartyCount == -1 ? "You are not registered yet." : $"You are {this.PartyCount}th party.";
 
-        public string WaitingMinutesMessage => this.PartyCount == -1 ? "" : $"だいたい {this.WaitingMinutes} 分待ちです";
+		public string WaitingMinutesMessage => this.PartyCount == -1 ? "" : $"だいたい {this.WaitingMinutes} 分待ちです";
+        public string WaitingMinutesMessageEn => this.PartyCount == -1 ? "" : $"About {this.WaitingMinutes} min wait";
 
         public PartyInfo(Registration registration)
         {

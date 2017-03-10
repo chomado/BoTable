@@ -12,7 +12,10 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Label Text="{Binding PartyInfo.Id, StringFormat='お客様番号 {0}'}"
+		<Image Source="waiting.png" />
+    	
+		
+        <Label Text="{Binding PartyInfo.Id, StringFormat='お客様番号: {0}'}"
                FontSize="Large"
                Margin="15"
                HorizontalOptions="Center" />
@@ -20,6 +23,19 @@
                FontSize="Large"
                HorizontalOptions="Center"/>
         <Label Text="{Binding PartyInfo.WaitingMinutesMessage}" 
+               HorizontalOptions="End"/>
+		
+		<Label Margin="0,40,0,0" />
+
+
+        <Label Text="{Binding PartyInfo.Id, StringFormat='Guest ID: {0}'}"
+               FontSize="Large"
+               Margin="15"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding PartyInfo.PartyCountMessageEn}"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+        <Label Text="{Binding PartyInfo.WaitingMinutesMessageEn}" 
                HorizontalOptions="End"/>
     </StackLayout>
 </ContentPage>
