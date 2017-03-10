@@ -28,7 +28,8 @@ namespace BoTable.ViewModels
 
         public async void OnNavigatedTo(NavigationParameters parameters)
         {
-            if (parameters.TryGetValue("id", out var id))
+            object id;
+            if (parameters.TryGetValue("id", out id))
             {
                 this.PartyInfo.Id = (string)id;
                 await this.PartyInfo.UpdateAsync();
