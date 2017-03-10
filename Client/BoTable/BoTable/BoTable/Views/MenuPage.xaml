@@ -3,7 +3,49 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="BoTable.Views.MenuPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+	
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="てすと" />
+	</ContentPage.ToolbarItems>
+	
+	<!-- iOS のとき、上に 20px 余白 -->
+	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
+
+	<Grid>
+		<StackLayout>
+			<!-- データ一覧リスト -->
+			<ListView ItemsSource="{Binding Menu}" HasUnevenRows="True"
+			>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<!-- 一行 -->
+							<StackLayout Orientation="Horizontal" Margin="2.5">
+						        <Image Source="{Binding ImageUrl}" 
+						                WidthRequest="140"
+						                HeightRequest="140"/>
+						        <StackLayout HorizontalOptions="FillAndExpand" Margin="6">
+									<!-- 料理の名前 -->
+							        <Label Text="{Binding Name}"
+		  			                 	 	FontSize="15"
+						                 	FontAttributes="Bold"
+						                 	LineBreakMode="TailTruncation"/>
+									
+									<!-- 一言説明の行 -->
+									<Label Text="{Binding Description}" FontSize="15" TextColor="Gray"/>
+
+									<!-- 値段の行 -->
+									<Label Text="{Binding Price, StringFormat='{0}円'}" FontSize="16" TextColor="Black"/>
+
+						        </StackLayout>
+					        </StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+
+	</Grid>
 </ContentPage>
