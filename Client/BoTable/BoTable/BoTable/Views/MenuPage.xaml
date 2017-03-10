@@ -6,9 +6,9 @@
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="BoTable.Views.MenuPage">
 	
-	<ContentPage.ToolbarItems>
+	<!--<ContentPage.ToolbarItems>
 		<ToolbarItem Text="てすと" />
-	</ContentPage.ToolbarItems>
+	</ContentPage.ToolbarItems>-->
 	
 	<!-- iOS のとき、上に 20px 余白 -->
 	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
