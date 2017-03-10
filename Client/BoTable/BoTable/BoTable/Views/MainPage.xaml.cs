@@ -15,11 +15,9 @@ namespace BoTable.Views
 
         public async void OnQrClicked(object sender, EventArgs e)
         {
-			var mainPageViewModel = (MainPageViewModel)this.BindingContext;
+			//var mainPageViewModel = (MainPageViewModel)this.BindingContext;
+            //mainPageViewModel.TestNavigateToDetailCommand.Execute();
 
-			// 詳細ページへの遷移のコマンド実行
-            mainPageViewModel.TestNavigateToDetailCommand.Execute();
-            /*
             try
             {
                 // スキャナページの設定
@@ -51,7 +49,7 @@ namespace BoTable.Views
             {
                 Debug.WriteLine(ex);
             }
-            */
+
         }
     }
 }
