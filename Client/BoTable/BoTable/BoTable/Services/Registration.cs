@@ -21,7 +21,7 @@ namespace BoTable.Services
             var waitingPeople = this.documentClient.CreateDocumentQuery<Party>(
                 UriFactory.CreateDocumentCollectionUri(databaseId: "store", collectionId: "party")
             ).ToList()
-            .OrderByDescending(x => x.Id)
+            .OrderBy(x => x.Id)
             .ToList();
 
             var target = waitingPeople.FirstOrDefault(x => x.Id == id);

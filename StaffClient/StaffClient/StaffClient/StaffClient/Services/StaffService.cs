@@ -22,7 +22,7 @@ namespace StaffClient.Services
             var result = this.Client.CreateDocumentQuery<Party>(
                 UriFactory.CreateDocumentCollectionUri("store", "party"))
                 .ToArray()
-                .OrderByDescending(x => x.Id);
+                .OrderBy(x => x.Id);
             return Task.FromResult<IEnumerable<Party>>(result);
         }
 
