@@ -5,24 +5,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BoTable.Services;
+using BoTable.Model;
 
 namespace BoTable.ViewModels
 {
     public class WaitingPageViewModel : BindableBase
     {
+        private PartyInfo partyInfo;
 
-        public WaitingPageViewModel(INavigationService navigationService, Registration registration)
+        public PartyInfo PartyInfo
         {
-            this.registration = registration;
+            get { return this.partyInfo; }
+            private set { this.SetProperty(ref this.partyInfo, value); }
         }
 
         private Registration registration;
 
-        private int number;
-        public int Number 
+        public WaitingPageViewModel(INavigationService navigationService, Registration registration, PartyInfo partyInfo)
         {
-            get { return this.number; }
-            set { SetProperty(ref this.number, value); }
+            this.registration = registration;
+            this.PartyInfo = partyInfo;
         }
 
         // ライフサイクル
@@ -34,8 +36,9 @@ namespace BoTable.ViewModels
 
         public async void ShowWaitingPartyNumber()
         {
-            var number = await this.registration.GetWaitingPartyNumber(id: "dummy");
-            Number = number;
+            var number = await this.registration.GetWaitingPartyNumber(id: this.PartyInfo.Id);
+            this.PartyInfo.PartyCount = number;
+            this.PartyInfo.WaitingMinutes = number * 8;
         }
 
     }

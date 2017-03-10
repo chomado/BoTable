@@ -20,9 +20,14 @@ namespace BoTable.Services
         {
             var waitingPeople = this.documentClient.CreateDocumentQuery<Party>(
                 UriFactory.CreateDocumentCollectionUri(databaseId: "store", collectionId: "party")
-            ).ToList();
+            ).ToList()
+            .OrderByDescending(x => x.Id)
+            .ToList();
 
-            return Task.FromResult(waitingPeople.Count());
+            var target = waitingPeople.FirstOrDefault(x => x.Id == id);
+            if (target == null) { return Task.FromResult(-1); }
+
+            return Task.FromResult(waitingPeople.IndexOf(target) + 1);
         }
     }
 }

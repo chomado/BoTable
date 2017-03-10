@@ -5,10 +5,21 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="BoTable.Views.WaitingPage"
              Title="WaitingPage">
-	<!-- iOS のとき、上に 20px 余白 -->
-	<ContentPage.Padding><OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"></OnPlatform></ContentPage.Padding>
+    <!-- iOS のとき、上に 20px 余白 -->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0,20,0,0"></OnPlatform>
+    </ContentPage.Padding>
 
-  <StackLayout>
-    <Label Text=" {Binding Number, StringFormat='現在{0}組が待っています'}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
-  </StackLayout>
+    <StackLayout>
+        <Label Text="{Binding PartyInfo.Id, StringFormat='お客様番号 {0}'}"
+               FontSize="Large"
+               Margin="15"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding PartyInfo.PartyCountMessage}"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+        <Label Text="{Binding PartyInfo.WaitingMinutesMessage}" 
+               HorizontalOptions="End"/>
+    </StackLayout>
 </ContentPage>

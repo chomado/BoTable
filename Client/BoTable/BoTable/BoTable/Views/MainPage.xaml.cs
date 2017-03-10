@@ -3,6 +3,7 @@ using BoTable.ViewModels;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace BoTable.Views
 {
@@ -37,8 +38,9 @@ namespace BoTable.Views
                     {
                         await this.Navigation.PopAsync();
                         var mainPageViewModel = (MainPageViewModel)this.BindingContext;
-                    // ダッシュボードページへの遷移のコマンド実行
-                    mainPageViewModel.NavigateToDetailCommand.Execute(result.Text);
+                        // ダッシュボードページへの遷移のコマンド実行
+                        dynamic json = JsonConvert.DeserializeObject(result.Text);
+                        mainPageViewModel.NavigateToDetailCommand.Execute((string)json.id);
                     });
                 };
             }

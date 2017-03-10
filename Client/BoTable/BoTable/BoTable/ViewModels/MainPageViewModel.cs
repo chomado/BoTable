@@ -20,7 +20,7 @@ namespace BoTable.ViewModels
         {
             // 詳細ページへと遷移する時のコマンドを定義
             this.NavigateToDetailCommand = new DelegateCommand<string>(
-                executeMethod: async x => await navigationService.NavigateAsync(name: $"DashboardPage?json={x}")
+                executeMethod: async x => await navigationService.NavigateAsync(name: $"DashboardPage?id={x}")
             );
         }
 
