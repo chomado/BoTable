@@ -5,12 +5,14 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="StaffClient.Views.MainPage"
              Title="Tsubame staff app">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+  <StackLayout VerticalOptions="Center">
         <Button Text="Regist"
                 Command="{Binding NavigateCommand}"
-                CommandParameter="RegistPage" />
+                CommandParameter="RegistPage" 
+                Margin="10,0"/>
         <Button Text="Leave"
                 Command="{Binding NavigateCommand}"
-                CommandParameter="LeavePage" />
+                CommandParameter="LeavePage" 
+                Margin="10,0"/>
     </StackLayout>
 </ContentPage>

@@ -23,7 +23,7 @@ namespace StaffClient.BusinessObjects
         public string Type { get; set; }
         public int Capacity { get; set; }
 
-        public string Text => $"座席番号 {this.Id} {this.Capacity} 人掛け {(this.Type == "counter" ? "カウンター" : "テーブル")} 席";
+        public string Text => $"座席番号 {this.Id}: {this.Capacity} 人掛け {(this.Type == "counter" ? "カウンター" : "テーブル")} 席";
 
         public string Detail => $"{(this.Smoke == "no" ? "禁煙" : "喫煙")} {(this.Status == 0 ? "空" : "")}";
     }
