@@ -32,11 +32,12 @@ namespace StaffClient
                 new Uri("https://botable.documents.azure.com:443/"),
                 "Qp2YxwT8uNCTrhuKR3pUCnLkgbEkQWu1CcD0TQzAq67VCeqIKBWiyHRSwyNbQaejcYioptYY0JSraNNK1pByvQ=="));
 
-            this.Container.RegisterTypeForNavigation<NavigationPage>();
+            this.Container.RegisterTypeForNavigation<BoTableNavigationPage>("NavigationPage");
             this.Container.RegisterTypeForNavigation<MainPage>();
             this.Container.RegisterTypeForNavigation<RegistPage>();
             this.Container.RegisterTypeForNavigation<LeavePage>();
             Container.RegisterTypeForNavigation<SheetsPage>();
+            Container.RegisterTypeForNavigation<BoTableNavigationPage>();
         }
     }
 }

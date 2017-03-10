@@ -21,7 +21,7 @@ namespace BoTable
 
         protected override void RegisterTypes()
         {
-            Container.RegisterTypeForNavigation<NavigationPage>();
+            Container.RegisterTypeForNavigation<BoTableNavigationPage>("NavigationPage");
 			Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<DashboardPage>();
 
@@ -33,6 +33,7 @@ namespace BoTable
                 authKeyOrResourceToken: "Qp2YxwT8uNCTrhuKR3pUCnLkgbEkQWu1CcD0TQzAq67VCeqIKBWiyHRSwyNbQaejcYioptYY0JSraNNK1pByvQ=="));
 
             Container.RegisterType<PartyInfo>(new ContainerControlledLifetimeManager());
+            Container.RegisterTypeForNavigation<BoTableNavigationPage>();
         }
     }
 }

@@ -40,10 +40,14 @@
     <Compile Include="BusinessObjects\Sheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\StaffService.cs" />
+    <Compile Include="ViewModels\BoTableNavigationPageViewModel.cs" />
     <Compile Include="ViewModels\LeavePageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\RegistPageViewModel.cs" />
     <Compile Include="ViewModels\SheetsPageViewModel.cs" />
+    <Compile Include="Views\BoTableNavigationPage.xaml.cs">
+      <DependentUpon>BoTableNavigationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LeavePage.xaml.cs">
       <DependentUpon>LeavePage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SheetsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\BoTableNavigationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
