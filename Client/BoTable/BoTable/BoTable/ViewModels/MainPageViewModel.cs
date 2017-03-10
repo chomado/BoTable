@@ -22,6 +22,10 @@ namespace BoTable.ViewModels
             this.NavigateToDetailCommand = new DelegateCommand<string>(
                 executeMethod: async x => await navigationService.NavigateAsync(name: $"DashboardPage?json={x}")
             );
+            // テスト用 (QRボタンを押した時に)
+            this.TestNavigateToDetailCommand = new DelegateCommand(
+                executeMethod: async () => await navigationService.NavigateAsync(name: "DashboardPage")
+            );
         }
 
         // ライフサイクル
@@ -41,5 +45,6 @@ namespace BoTable.ViewModels
 
         // 詳細ページへと遷移したい時に呼ばれるコマンド
         public DelegateCommand<string> NavigateToDetailCommand { get; }
+        public DelegateCommand TestNavigateToDetailCommand { get; }
     }
 }
