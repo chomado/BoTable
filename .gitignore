@@ -40,3 +40,5 @@ Thumbs.db
 *.dotCover
 
 Client/BoTable/BoTable/BoTable/project.lock.json
+
+*.clip
