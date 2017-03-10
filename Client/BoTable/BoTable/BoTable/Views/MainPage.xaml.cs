@@ -42,8 +42,8 @@ namespace BoTable.Views
                         await this.Navigation.PopAsync();
                         var mainPageViewModel = (MainPageViewModel)this.BindingContext;
                         // ダッシュボードページへの遷移のコマンド実行
-                        dynamic json = JsonConvert.DeserializeObject(result.Text);
-                        mainPageViewModel.NavigateToDetailCommand.Execute((string)json.id);
+                        var json = JsonConvert.DeserializeObject<JsonObj>(result.Text);
+                        mainPageViewModel.NavigateToDetailCommand.Execute(json.Id);
                     });
                 };
             }
@@ -52,6 +52,15 @@ namespace BoTable.Views
                 Debug.WriteLine(ex);
             }
 
+        }
+
+        public class JsonObj
+        {
+            public string Id
+            {
+                get;
+                set;
+            }
         }
     }
 }

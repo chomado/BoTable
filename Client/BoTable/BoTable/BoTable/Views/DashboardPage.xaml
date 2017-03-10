@@ -4,14 +4,14 @@
 	xmlns:views="clr-namespace:BoTable.Views"
 	x:Class="BoTable.Views.DashboardPage"
 
-	Title="DashboardPage">
+	Title="BoTable">
 	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
 	</ContentPage.Padding> 
 
 	<!-- タブで表示できるページ群 -->
-	<views:WaitingPage Title="待ち画面"></views:WaitingPage>
-	<views:FloorMapPage Title="フロアマップ"></views:FloorMapPage>
-	<views:MenuPage Title="メニュー"></views:MenuPage>
+	<views:WaitingPage Title="Status"></views:WaitingPage>
+	<views:FloorMapPage Title="Floor Map"></views:FloorMapPage>
+	<views:MenuPage Title="Menu"></views:MenuPage>
 
 </TabbedPage>

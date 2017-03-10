@@ -151,6 +151,7 @@
     <AndroidResource Include="Resources\drawable\restaurant2.jpg" />
     <AndroidResource Include="Resources\drawable\IconPortrait.png" />
     <AndroidResource Include="Resources\drawable\Welcome.png" />
+    <AndroidResource Include="Resources\drawable\waiting.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\tabs.xml" />

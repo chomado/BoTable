@@ -43,6 +43,7 @@
         <image name="restaurant.jpg" width="640" height="426"/>
         <image name="restaurant2.jpg" width="2400" height="1600"/>
         <image name="Welcome.png" width="762" height="358"/>
+        <image name="waiting.png" width="588" height="349"/>
     </resources>
     <color key="tintColor" colorSpace="calibratedRGB" red="0.46274509803921571" green="0" blue="0.050980392156862744" alpha="1"/>
 </document>
