@@ -52,6 +52,8 @@
     <Compile Include="Services\Registration.cs" />
     <Compile Include="Model\Party.cs" />
     <Compile Include="ViewModels\WaitingPageViewModel.cs" />
+    <Compile Include="Model\Menu.cs" />
+    <Compile Include="ViewModels\MenuPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
