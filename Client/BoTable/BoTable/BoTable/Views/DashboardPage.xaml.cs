@@ -8,26 +8,6 @@ namespace BoTable.Views
 		public DashboardPage()
         {
 			InitializeComponent();
-
-            // タブが切り替えられたとき
-            this.CurrentPageChanged += (sender, e) => {
-                var waitingPage = this.CurrentPage as WaitingPage;
-                if (waitingPage != null)
-                {
-                    var viewModel = waitingPage.BindingContext as WaitingPageViewModel;
-                    viewModel.ShowWaitingPartyNumber();
-                }
-            };
-
-            // 表示中
-            this.Appearing += (sender, e) => { 
-                var waitingPage = this.CurrentPage as WaitingPage;
-				if (waitingPage != null)
-				{
-					var viewModel = waitingPage.BindingContext as WaitingPageViewModel;
-					viewModel.ShowWaitingPartyNumber();
-				}
-            };
         }
     }
 }

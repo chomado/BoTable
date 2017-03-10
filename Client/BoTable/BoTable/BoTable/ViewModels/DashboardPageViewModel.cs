@@ -2,9 +2,11 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace BoTable.ViewModels
 {
@@ -12,20 +14,38 @@ namespace BoTable.ViewModels
     {
         private PartyInfo PartyInfo { get; }
 
-		public DashboardPageViewModel(PartyInfo partyInfo)
+        private IPageDialogService PageDialogService { get; }
+
+		public DashboardPageViewModel(PartyInfo partyInfo, IPageDialogService pageDialogService)
         {
             this.PartyInfo = partyInfo;
+            this.PageDialogService = pageDialogService;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public async void OnNavigatedTo(NavigationParameters parameters)
         {
             if (parameters.TryGetValue("id", out var id))
             {
                 this.PartyInfo.Id = (string)id;
+                await this.PartyInfo.UpdateAsync();
+
+                if (this.PartyInfo.PartyCount != -1)
+                {
+                    Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+                    {
+                        this.PartyInfo.UpdateAsync().Wait();
+                        if (this.PartyInfo.PartyCount == 1)
+                        {
+                            this.PageDialogService.DisplayAlertAsync("Info", "お客様の番が来ました。いらっしゃいませ。", "OK");
+                            return false;
+                        }
+                        return true;
+                    });
+                }
             }
         }
     }

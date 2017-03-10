@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using BoTable.Services;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace BoTable.Model
 {
     public class PartyInfo : BindableBase
     {
+        private Registration Registration { get; }
+
         private string id;
 
         public string Id
@@ -36,5 +39,17 @@ namespace BoTable.Model
         public string PartyCountMessage => this.PartyCount == -1 ? "お客様は登録されていません" : $"あなたは {this.PartyCount} 組目です";
 
         public string WaitingMinutesMessage => this.PartyCount == -1 ? "" : $"だいたい {this.WaitingMinutes} 分待ちです";
+
+        public PartyInfo(Registration registration)
+        {
+            this.Registration = registration;
+        }
+
+        public async Task UpdateAsync()
+        {
+            var count = await this.Registration.GetWaitingPartyNumber(this.Id);
+            this.PartyCount = count;
+            this.WaitingMinutes = count * 8;
+        }
     }
 }

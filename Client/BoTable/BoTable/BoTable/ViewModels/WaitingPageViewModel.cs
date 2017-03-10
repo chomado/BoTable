@@ -26,20 +26,5 @@ namespace BoTable.ViewModels
             this.registration = registration;
             this.PartyInfo = partyInfo;
         }
-
-        // ライフサイクル
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public async void ShowWaitingPartyNumber()
-        {
-            var number = await this.registration.GetWaitingPartyNumber(id: this.PartyInfo.Id);
-            this.PartyInfo.PartyCount = number;
-            this.PartyInfo.WaitingMinutes = number * 8;
-        }
-
     }
 }
