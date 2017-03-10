@@ -4,7 +4,8 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="BoTable.Views.WaitingPage"
-             Title="WaitingPage">
+             Title="WaitingPage"
+             Icon="icon1.png">
     <!-- iOS のとき、上に 20px 余白 -->
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"

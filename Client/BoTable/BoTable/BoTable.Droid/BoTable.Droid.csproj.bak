@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -149,7 +149,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\restaurant.jpg" />
     <AndroidResource Include="Resources\drawable\restaurant2.jpg" />
-    <AndroidResource Include="Resources\drawable\IconPortrait.png" />
+    <AndroidResource Include="Resources\drawable\Icon-Portrait.png" />
     <AndroidResource Include="Resources\drawable\Welcome.png" />
   </ItemGroup>
   <ItemGroup>
@@ -161,10 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\drawable\map.jpg" />
-    <AndroidResource Include="Resources\drawable\icon1.png" />
-    <AndroidResource Include="Resources\drawable\icon2.png" />
-    <AndroidResource Include="Resources\drawable\icon3.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BoTable\BoTable.csproj">
