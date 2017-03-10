@@ -38,3 +38,5 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+
+Client/BoTable/BoTable/BoTable/project.lock.json
