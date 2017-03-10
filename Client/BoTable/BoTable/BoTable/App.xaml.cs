@@ -3,6 +3,7 @@ using BoTable.Views;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Practices.Unity;
 using BoTable.Services;
+using Xamarin.Forms;
 
 namespace BoTable
 {
@@ -14,11 +15,12 @@ namespace BoTable
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes()
         {
+            Container.RegisterTypeForNavigation<NavigationPage>();
 			Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<DashboardPage>();
 

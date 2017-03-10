@@ -8,7 +8,8 @@
     "Prism.Forms": "6.2.0",
     "Prism.Unity.Forms": "6.2.0",
     "Unity": "4.0.1",
-    "Xamarin.Forms": "2.3.3.193"
+    "Xamarin.Forms": "2.3.3.193",
+    "ZXing.Net.Mobile.Forms": "2.1.47"
   },
   "frameworks": {
     "netstandard1.6": {

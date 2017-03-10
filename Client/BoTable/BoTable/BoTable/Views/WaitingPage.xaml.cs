@@ -10,13 +10,5 @@ namespace BoTable.Views
         {
             InitializeComponent();
         }
-
-        public void OnQrClicked(object sender, EventArgs e)
-        {
-            var mainPageViewModel = (MainPageViewModel)this.BindingContext;
-
-            // 詳細ページへの遷移のコマンド実行
-            mainPageViewModel.NavigateToDetailCommand.Execute();
-        }
     }
 }
